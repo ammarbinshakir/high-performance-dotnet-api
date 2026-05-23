@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/HighPerformanceDotNetApi.Api/HighPerformanceDotNetApi.Api.csproj" />
+    <Project Path="src/HighPerformanceDotNetApi.Application/HighPerformanceDotNetApi.Application.csproj" />
+    <Project Path="src/HighPerformanceDotNetApi.Domain/HighPerformanceDotNetApi.Domain.csproj" />
+    <Project Path="src/HighPerformanceDotNetApi.Infrastructure/HighPerformanceDotNetApi.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/HighPerformanceDotNetApi.Api.Tests/HighPerformanceDotNetApi.Api.Tests.csproj" />
+    <Project Path="tests/HighPerformanceDotNetApi.Application.Tests/HighPerformanceDotNetApi.Application.Tests.csproj" />
+  </Folder>
+</Solution>

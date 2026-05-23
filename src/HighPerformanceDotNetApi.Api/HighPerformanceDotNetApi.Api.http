@@ -1,0 +1,19 @@
+@HighPerformanceDotNetApi.Api_HostAddress = http://localhost:8080
+
+GET {{HighPerformanceDotNetApi.Api_HostAddress}}/api/products/search/optimized?term=laptop&pageSize=25
+Accept: application/json
+
+###
+
+GET {{HighPerformanceDotNetApi.Api_HostAddress}}/api/products/search/slow?term=laptop&pageSize=25
+Accept: application/json
+
+###
+
+GET {{HighPerformanceDotNetApi.Api_HostAddress}}/api/products/hot/cached?count=25
+Accept: application/json
+
+###
+
+GET {{HighPerformanceDotNetApi.Api_HostAddress}}/api/products/rate-limited
+Accept: application/json

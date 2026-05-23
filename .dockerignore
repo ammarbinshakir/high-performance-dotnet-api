@@ -1,0 +1,16 @@
+.git/
+.dotnet/
+.vs/
+.vscode/
+.idea/
+**/bin/
+**/obj/
+TestResults/
+coverage/
+load-tests/results/
+docker-data/
+*.user
+*.suo
+*.DS_Store
+README.md
+docs/
