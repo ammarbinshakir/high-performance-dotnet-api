@@ -17,7 +17,7 @@ Command:
 
 ```bash
 RATE_LIMITING_ENABLED=false docker compose up -d --build
-k6 run load-tests/k6-search-comparison.js
+k6 run --summary-export load-tests/results/search-summary.json load-tests/k6-search-comparison.js
 ```
 
 The optimized and slow scenarios run in separate phases so the slow query does not contaminate optimized-query latency.
@@ -35,10 +35,12 @@ Command:
 
 ```bash
 RATE_LIMITING_ENABLED=false docker compose up -d --build
-k6 run load-tests/k6-cache-comparison.js
+k6 run --summary-export load-tests/results/cache-summary.json load-tests/k6-cache-comparison.js
 ```
 
 The cached endpoint is warmed before measurement. Cached and non-cached traffic run in separate phases.
+
+Open `http://localhost:8080/benchmarks` to view the latest exported results in the API-hosted dashboard.
 
 | Endpoint | p50 | p95 | p99 | RPS | Notes |
 | --- | ---: | ---: | ---: | ---: | --- |

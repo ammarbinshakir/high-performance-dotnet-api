@@ -17,6 +17,8 @@ services:
       RateLimiting__Enabled: ${RATE_LIMITING_ENABLED:-true}
     ports:
       - "8080:8080"
+    volumes:
+      - ./load-tests/results:/app/load-tests/results:ro
 
   postgres:
     image: postgres:16-alpine

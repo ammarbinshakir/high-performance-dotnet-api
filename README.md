@@ -168,13 +168,19 @@ RATE_LIMITING_ENABLED=false docker compose up -d --build
 Then run:
 
 ```bash
-k6 run load-tests/k6-search-comparison.js
-k6 run load-tests/k6-cache-comparison.js
+k6 run --summary-export load-tests/results/search-summary.json load-tests/k6-search-comparison.js
+k6 run --summary-export load-tests/results/cache-summary.json load-tests/k6-cache-comparison.js
 ```
 
 The search comparison script runs optimized traffic first and the slow endpoint second. That keeps the intentionally inefficient endpoint from saturating the API while the optimized endpoint is being measured.
 
 The cache comparison script warms the cached endpoint first, then runs cached and non-cached traffic in separate phases. This avoids measuring the initial cache-fill stampede as steady-state cache latency.
+
+Open the browser dashboard after running the benchmarks:
+
+```text
+http://localhost:8080/benchmarks
+```
 
 Turn rate limiting back on for the feature demo with:
 
