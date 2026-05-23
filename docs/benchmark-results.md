@@ -38,6 +38,8 @@ RATE_LIMITING_ENABLED=false docker compose up -d --build
 k6 run load-tests/k6-cache-comparison.js
 ```
 
+The cached endpoint is warmed before measurement. Cached and non-cached traffic run in separate phases.
+
 | Endpoint | p50 | p95 | p99 | RPS | Notes |
 | --- | ---: | ---: | ---: | ---: | --- |
 | `/api/products/hot/non-cached` | TODO | TODO | TODO | TODO | Database hit on every request |

@@ -174,6 +174,8 @@ k6 run load-tests/k6-cache-comparison.js
 
 The search comparison script runs optimized traffic first and the slow endpoint second. That keeps the intentionally inefficient endpoint from saturating the API while the optimized endpoint is being measured.
 
+The cache comparison script warms the cached endpoint first, then runs cached and non-cached traffic in separate phases. This avoids measuring the initial cache-fill stampede as steady-state cache latency.
+
 Turn rate limiting back on for the feature demo with:
 
 ```bash
@@ -188,9 +190,6 @@ Benchmark notes live in [docs/benchmark-results.md](docs/benchmark-results.md). 
 dotnet test
 ```
 
-## Portfolio TODOs
+## Benchmark Evidence
 
-- Add real k6 screenshots to `docs/benchmark-results.md`
-- Add `EXPLAIN (ANALYZE, BUFFERS)` screenshots for slow and optimized query paths
-- Add Docker stats or Grafana screenshots during load tests
-- Add a short write-up comparing p95 latency before and after cache warm-up
+Benchmark tables, screenshot placeholders, and PostgreSQL query-plan notes live in [docs/benchmark-results.md](docs/benchmark-results.md).
